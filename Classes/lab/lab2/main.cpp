@@ -21,7 +21,7 @@ void ExecuteMenu(char option, ShoppingCart& theCart) {
    int price;
    int qty;
    char newOption = option;
-   while (newOption != 'q') {
+   //if (newOption != 'q') {
          cin.ignore();
          ItemToPurchase newItem;
       if (newOption == 'a') {
@@ -65,10 +65,11 @@ void ExecuteMenu(char option, ShoppingCart& theCart) {
          cout << "OUTPUT SHOPPING CART" << endl;
          theCart.PrintTotal();
          PrintMenu();
+      } else {
+         cout << "Choose an option:" << endl;
+         cin >> newOption;
       }
-      cout << "Choose an option:" << endl;
-      cin >> newOption;
-   }
+   //}
 }
 
 int main() {
@@ -91,7 +92,13 @@ int main() {
 
    cout << "Choose an option:" << endl;
    cin >> option;
-   ExecuteMenu(option, shoppingCart);
+   while (option != 'q') {
+      ExecuteMenu(option, shoppingCart);
+      // PrintMenu();
+      cout << "Choose an option:" << endl;
+      cin >> option;
+   }
+
 
    return 0;
 }
