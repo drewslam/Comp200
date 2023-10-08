@@ -31,6 +31,7 @@ int main() {
 
     cout << "Please enter a series of integers (enter -1 to exit)" << endl;
     cin >> userInput;
+
     int* inputPtr = &userInput;
     while (userInput != -1) {
       *(userArr + index) = inputPtr;

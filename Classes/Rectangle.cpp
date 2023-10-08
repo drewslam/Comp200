@@ -3,8 +3,8 @@
 using namespace std;
 
 Rectangle::Rectangle() {
-    this->width = 1;
-    this->length = 1;
+    this->width = 0;
+    this->length = 0;
 }
 
 Rectangle::Rectangle(int w, int l) {
@@ -53,4 +53,22 @@ void Rectangle::print() const {
     cout << "Length: " << getLength() << endl;
     cout << "Area: " << getArea() << endl;
     cout << "Perimeter: " << getPerimeter() << endl;
+}
+
+int Rectangle::add(Rectangle& rect2) {
+    Rectangle newRect;
+
+    newRect.width = this->width + rect2.getWidth();
+    newRect.length = this->length + rect2.getLength();
+
+    return newRect.getArea();
+}
+
+Rectangle Rectangle::operator+ (const Rectangle& rect2) {
+    Rectangle newRect;
+
+    newRect.width = this->width + rect2.getWidth();
+    newRect.length = this->length + rect2.getLength();
+
+    return newRect;
 }
