@@ -108,10 +108,13 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
 
       temp = headNode;
       currentPosition = 0;
-      while (currentPosition <= targetPosition) {
-         temp = temp->GetNext();
+      while (currentPosition < targetPosition) {
+         temp = temp;
          tempNext = temp->GetNext();
          currentPosition++;
+         if (currentPosition != targetPosition) {
+            temp = temp->GetNext();
+         }
       }
 
       leadingNode->SetNext(followingNode);
@@ -163,7 +166,7 @@ int main() {
    cin >> userOption;
 
    if (userOption == 'q') {
-         return 0;
+      return 0;
    }
 
    while (userOption != 'q') {
@@ -176,4 +179,3 @@ int main() {
 
    return 0;
 }
-

@@ -1,6 +1,6 @@
 #ifndef PLAYLISTNODE_H
 #define PLAYLISTNODE_H
-
+#include <string>
 using namespace std;
 
 // Build the PlaylistNode class per the following specifications.
