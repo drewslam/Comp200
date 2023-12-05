@@ -9,14 +9,14 @@ int Fibonacci(int n) {
       return n;
    }
    fib = Fibonacci(n - 1) + Fibonacci(n - 2);
-   
+   cout << fib << endl;
    return fib;
 }
 
 int main() {
-   int startNum;
+   int startNum = 5;
    
-   cin >> startNum;  
+   // cin >> startNum;
    cout << "Fibonacci(" << startNum << ") is " << Fibonacci(startNum) << endl;
    
    return 0;
